@@ -1,5 +1,5 @@
 on:
-  repository-dispatch:
+  repository_dispatch:
     type: [new]
 jobs:
   new-message:

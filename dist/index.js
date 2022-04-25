@@ -10941,7 +10941,7 @@ const getChannelIDFromURL = (channelURL) => {
 }
 
 const createMessage = async (content) => {
-  const channelID = getChannelIDFromURL(content.channelURL);
+  const channelID = getChannelIDFromURL(content.channel_url);
   const { discordToken } = getEnv();
   const headers = {
     Authorization: `Bot: ${discordToken}`

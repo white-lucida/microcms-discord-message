@@ -10946,8 +10946,9 @@ const createMessage = async (content) => {
   const headers = {
     Authorization: `Bot: ${discordToken}`
   };
+  const { messageContent, embeds, components } = content.message;
   
-  await axios.post(`${DISCORD_API_BASE_PATH}/channels/${channelID}/messages`, content.message, { headers });
+  await axios.post(`${DISCORD_API_BASE_PATH}/channels/${channelID}/messages`, { content: messageContent, embeds, components }, { headers });
 }
 
 const main = async () => {

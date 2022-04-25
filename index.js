@@ -1,5 +1,8 @@
 //const core = require('@actions/core');
 const github = require('@actions/github');
+const { default: axios } = require('axios');
+const _axios = require("axios");
+axios = new _axios.Axios();
 
 const DISCORD_API_BASE_PATH = "https://discord.com/api/v9";
 
@@ -17,15 +20,11 @@ const getProps = () => {
 }
 
 const getContent = async ({ contentID, microCMSAPIKey, microCMSServiceID }) => {
-  const header = {
+  const headers = {
     "X-MICROCMS-API-KEY": microCMSAPIKey
   }
-  const url = `https://${microCMSServiceID}.microcms.io/api/v1/message/${contentID}`;
-  const result = await fetch(url, {
-    headers: header
-  });
-  const json = await result.json();
-  return json;
+  const result = await axios.get(`https://${microCMSServiceID}.microcms.io/api/v1/message/${contentID}`, { headers });
+  return result.data;
 }
 
 /**
@@ -53,17 +52,11 @@ const getChannelIDFromURL = (channelURL) => {
 const createMessage = async (content) => {
   const channelID = getChannelIDFromURL(content.channelURL);
   const { discordToken } = getEnv();
-  const header = {
+  const headers = {
     Authorization: `Bot: ${discordToken}`
   };
   
-  await fetch(`${DISCORD_API_BASE_PATH}/channels/${channelID}/messages`, {
-    method: "POST",
-    body: {
-      ...content.message
-    },
-    headers: header
-  });
+  await axios.post(`${DISCORD_API_BASE_PATH}/channels/${channelID}/messages`, content.message, { headers });
 }
 
 const main = async () => {

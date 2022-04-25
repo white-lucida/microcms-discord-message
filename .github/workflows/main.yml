@@ -1,6 +1,9 @@
 on:
   repository_dispatch:
     type: [new]
+env:
+  MICROCMS_API_KEY: ${{secrets.MICROCMS_API_KEY}}
+  MICROCMS_SERVICE_ID: ${{secrets.MICROCMS_SERVICE_ID}}
 jobs:
   new-message:
     runs-on: ubuntu-latest

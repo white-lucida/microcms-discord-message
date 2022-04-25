@@ -10894,8 +10894,6 @@ var __webpack_exports__ = {};
 //const core = require('@actions/core');
 const github = __nccwpck_require__(8408);
 const { default: axios } = __nccwpck_require__(1343);
-const _axios = __nccwpck_require__(1343);
-axios = new _axios.Axios();
 
 const DISCORD_API_BASE_PATH = "https://discord.com/api/v9";
 

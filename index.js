@@ -1,8 +1,6 @@
 //const core = require('@actions/core');
 const github = require('@actions/github');
 const { default: axios } = require('axios');
-const _axios = require("axios");
-const axios = _axios.default;
 
 const DISCORD_API_BASE_PATH = "https://discord.com/api/v9";
 

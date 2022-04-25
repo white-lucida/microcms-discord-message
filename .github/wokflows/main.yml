@@ -1,0 +1,11 @@
+on:
+  repository-dispatch:
+    type: [new]
+jobs:
+  new-message:
+    runs-on: ubuntu-latest
+    name: A job to create message
+    steps:
+      - name: create message
+        uses: white-lucida/microcms-discord-message
+        

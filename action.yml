@@ -1,8 +1,5 @@
 name: 'New Message'
 description: 'Create new message'
-on:
-  repository-dispatch:
-    types: [new]
 runs:
   using: 'node16'
   main: 'index.js'

@@ -7,5 +7,5 @@ jobs:
     name: A job to create message
     steps:
       - name: create message
-        uses: white-lucida/microcms-discord-message
+        uses: white-lucida/microcms-discord-message@main
         

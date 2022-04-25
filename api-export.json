@@ -1,0 +1,425 @@
+{
+  "apiFields": [
+    {
+      "idValue": "7PxkR9DX1Q",
+      "fieldId": "channel_url",
+      "name": "チャンネルのURL",
+      "kind": "text",
+      "description": "メッセージを投稿したいチャンネルのURL（「https://discord.com/channels/ ... / ... 」の形式に従ってください）",
+      "required": true,
+      "patternMatchValidation": {
+        "regexp": {
+          "pattern": "https://discord.com/channels/\\d+/\\d+",
+          "flags": null
+        }
+      },
+      "isUnique": false
+    },
+    {
+      "fieldId": "message",
+      "name": "メッセージ",
+      "kind": "custom",
+      "required": true,
+      "customFieldCreatedAt": "2022-04-24T12:52:35.516Z"
+    },
+    {
+      "fieldId": "message_id",
+      "name": "メッセージのID",
+      "kind": "text",
+      "description": "メッセージを編集するために内部で使用するデータです。",
+      "isUnique": false
+    }
+  ],
+  "customFields": [
+    {
+      "createdAt": "2022-04-24T10:07:17.515Z",
+      "fieldId": "embed",
+      "name": "埋め込み",
+      "fields": [
+        {
+          "idValue": "-TVBz9IDfs",
+          "fieldId": "title",
+          "name": "タイトル",
+          "kind": "text",
+          "required": false
+        },
+        {
+          "idValue": "grnPm9XsSi",
+          "fieldId": "description",
+          "name": "説明",
+          "kind": "textArea"
+        },
+        {
+          "idValue": "yrXiTmpmbi",
+          "fieldId": "fields",
+          "name": "フィールド",
+          "kind": "repeater",
+          "customFieldCreatedAtList": [
+            "2022-04-24T10:08:10.971Z",
+            "2022-04-25T03:23:59.836Z"
+          ]
+        },
+        {
+          "idValue": "h4THRIOyOo",
+          "fieldId": "color",
+          "name": "色",
+          "kind": "number"
+        },
+        {
+          "idValue": "tnJqYycLEe",
+          "fieldId": "url",
+          "name": "URL",
+          "kind": "text"
+        }
+      ],
+      "position": [
+        ["-TVBz9IDfs", "grnPm9XsSi", "83dlODO9NQ", "h4THRIOyOo", "tnJqYycLEe"],
+        ["yrXiTmpmbi"]
+      ],
+      "updatedAt": "2022-04-26T07:59:24.924Z",
+      "viewerGroup": "2Si"
+    },
+    {
+      "createdAt": "2022-04-24T11:45:34.809Z",
+      "fieldId": "selectMenuOption",
+      "name": "セレクトメニューオプション",
+      "fields": [
+        {
+          "idValue": "BPQrsUV2cQ",
+          "fieldId": "label",
+          "name": "選択肢ラベル",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "idValue": "wTYQmCIE02",
+          "fieldId": "value",
+          "name": "選択肢値",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "idValue": "QelgKUofW3",
+          "fieldId": "description",
+          "name": "選択肢説明",
+          "kind": "text"
+        }
+      ],
+      "position": [["BPQrsUV2cQ", "wTYQmCIE02", "QelgKUofW3"]],
+      "updatedAt": "2022-04-24T11:45:34.809Z",
+      "viewerGroup": "2Si"
+    },
+    {
+      "createdAt": "2022-04-24T12:52:35.516Z",
+      "fieldId": "message",
+      "name": "メッセージ",
+      "fields": [
+        {
+          "idValue": "g4XQRe_0eC",
+          "fieldId": "content",
+          "name": "内容",
+          "kind": "textArea"
+        },
+        {
+          "idValue": "th2uzUUoNr",
+          "fieldId": "embeds",
+          "name": "埋め込み",
+          "kind": "repeater",
+          "customFieldCreatedAtList": ["2022-04-24T10:07:17.515Z"]
+        },
+        {
+          "idValue": "JOfQeC6Vvt",
+          "fieldId": "components",
+          "name": "コンポーネント",
+          "kind": "repeater",
+          "customFieldCreatedAtList": ["2022-04-25T02:56:39.841Z"],
+          "repeaterCountLimitValidation": {
+            "repeatCount": { "min": null, "max": 5 }
+          }
+        }
+      ],
+      "position": [["g4XQRe_0eC", "th2uzUUoNr", "JOfQeC6Vvt"]],
+      "updatedAt": "2022-04-25T03:01:10.855Z",
+      "viewerGroup": "2Si"
+    },
+    {
+      "createdAt": "2022-04-25T02:56:39.841Z",
+      "fieldId": "actionRow",
+      "name": "Action Row",
+      "fields": [
+        {
+          "idValue": "g5s6vPZWqk",
+          "fieldId": "type",
+          "name": "コンポーネントの種類",
+          "kind": "number",
+          "description": "「1」（Action Row）のみ入力できます。",
+          "required": true,
+          "selectItems": [{ "id": "vgUOoX_cMM", "value": "1" }],
+          "multipleSelect": false,
+          "numberSizeLimitValidation": { "numberSize": { "min": 1, "max": 1 } }
+        },
+        {
+          "idValue": "SxsU6HV4UY",
+          "fieldId": "components",
+          "name": "子コンポーネント",
+          "kind": "repeater",
+          "description": "このAction Rowの子コンポーネントです。",
+          "customFieldCreatedAtList": [
+            "2022-04-25T03:11:47.020Z",
+            "2022-04-25T03:16:21.509Z",
+            "2022-04-26T03:00:16.088Z"
+          ],
+          "repeaterCountLimitValidation": {
+            "repeatCount": { "min": null, "max": 5 }
+          }
+        }
+      ],
+      "position": [["g5s6vPZWqk", "SxsU6HV4UY"]],
+      "updatedAt": "2022-04-26T03:01:02.483Z",
+      "viewerGroup": "2Si"
+    },
+    {
+      "createdAt": "2022-04-25T03:11:47.020Z",
+      "fieldId": "button",
+      "name": "ボタンコンポーネント",
+      "fields": [
+        {
+          "idValue": "Qcixg_GQU7",
+          "fieldId": "type",
+          "name": "コンポーネントの種類",
+          "kind": "number",
+          "description": "「2」（Button）のみ選択できます。",
+          "required": true,
+          "selectItems": [{ "id": "-m9hM4mSR2", "value": "2" }],
+          "multipleSelect": false,
+          "numberSizeLimitValidation": { "numberSize": { "min": 2, "max": 2 } }
+        },
+        {
+          "idValue": "aQQgNRuKUL",
+          "fieldId": "style",
+          "name": "ボタンのスタイル",
+          "kind": "number",
+          "description": "「1」（Primary）、「2」（Secondary）、「3」（Success）、「4」（Danger）",
+          "required": true,
+          "selectItems": [
+            { "id": "5yf8fTyHvP", "value": "1" },
+            { "id": "eDxJqihbll", "value": "2" },
+            { "id": "dfBcy9inJH", "value": "3" },
+            { "id": "SjzLwpQTMU", "value": "4" },
+            { "id": "TBwZIdHEH0", "value": "5" }
+          ],
+          "multipleSelect": false,
+          "numberSizeLimitValidation": { "numberSize": { "min": 1, "max": 4 } }
+        },
+        {
+          "idValue": "as80nYNG-J",
+          "fieldId": "label",
+          "name": "ボタンのテキスト",
+          "kind": "text",
+          "textSizeLimitValidation": { "textSize": { "min": null, "max": 80 } }
+        },
+        {
+          "idValue": "jxZO9b_WSW",
+          "fieldId": "custom_id",
+          "name": "custom_id",
+          "kind": "text",
+          "required": true,
+          "textSizeLimitValidation": { "textSize": { "min": null, "max": 100 } }
+        },
+        {
+          "idValue": "fS1hiFS9pK",
+          "fieldId": "disabled",
+          "name": "ボタンを無効にする",
+          "kind": "boolean"
+        }
+      ],
+      "position": [
+        ["Qcixg_GQU7", "aQQgNRuKUL"],
+        ["as80nYNG-J", "2rdfRrCRz2", "jxZO9b_WSW", "fS1hiFS9pK"]
+      ],
+      "updatedAt": "2022-04-26T03:00:43.112Z",
+      "viewerGroup": "2Si"
+    },
+    {
+      "createdAt": "2022-04-25T03:16:21.509Z",
+      "fieldId": "selectMenu",
+      "name": "セレクトメニューコンポーネント",
+      "fields": [
+        {
+          "idValue": "-S_xRyoQgz",
+          "fieldId": "type",
+          "name": "コンポーネントの種類",
+          "kind": "number",
+          "description": "「3」（Select Menu）のみ入力できます。",
+          "required": true,
+          "selectItems": [{ "id": "J4M81zUsoU", "value": "3" }],
+          "multipleSelect": false,
+          "numberSizeLimitValidation": { "numberSize": { "min": 3, "max": 3 } }
+        },
+        {
+          "idValue": "gdxvrfuNaa",
+          "fieldId": "custom_id",
+          "name": "custom_id",
+          "kind": "text",
+          "textSizeLimitValidation": { "textSize": { "min": null, "max": 100 } }
+        },
+        {
+          "idValue": "8-88r-X8V3",
+          "fieldId": "options",
+          "name": "選択肢リスト",
+          "kind": "repeater",
+          "customFieldCreatedAtList": ["2022-04-24T11:45:34.809Z"]
+        },
+        {
+          "idValue": "nTPE9VLSb6",
+          "fieldId": "placeholder",
+          "name": "プレースホルダー",
+          "kind": "text",
+          "description": "150"
+        },
+        {
+          "idValue": "MMg67CjRMe",
+          "fieldId": "min_values",
+          "name": "最低選択数",
+          "kind": "number",
+          "numberSizeLimitValidation": { "numberSize": { "min": 0, "max": 25 } }
+        },
+        {
+          "idValue": "kHAho3y42v",
+          "fieldId": "max_values",
+          "name": "最大選択数",
+          "kind": "number",
+          "numberSizeLimitValidation": {
+            "numberSize": { "min": null, "max": 25 }
+          }
+        },
+        {
+          "idValue": "-e-xxcNScW",
+          "fieldId": "disabled",
+          "name": "セレクトメニューを無効にする",
+          "kind": "boolean"
+        }
+      ],
+      "position": [
+        [
+          "-S_xRyoQgz",
+          "gdxvrfuNaa",
+          "nTPE9VLSb6",
+          "MMg67CjRMe",
+          "kHAho3y42v",
+          "-e-xxcNScW"
+        ],
+        ["8-88r-X8V3"]
+      ],
+      "updatedAt": "2022-04-26T02:43:02.788Z",
+      "viewerGroup": "2Si"
+    },
+    {
+      "createdAt": "2022-04-25T03:23:59.836Z",
+      "fieldId": "embedField",
+      "name": "埋め込みフィールド",
+      "fields": [
+        {
+          "idValue": "5QWZkguiML",
+          "fieldId": "name",
+          "name": "フィールド名",
+          "kind": "text",
+          "required": true,
+          "textSizeLimitValidation": { "textSize": { "min": null, "max": 256 } }
+        },
+        {
+          "idValue": "f7IetGfCZt",
+          "fieldId": "value",
+          "name": "フィールド値",
+          "kind": "text",
+          "description": "",
+          "required": true,
+          "textSizeLimitValidation": {
+            "textSize": { "min": null, "max": 1024 }
+          }
+        },
+        {
+          "idValue": "16FjsoklEL",
+          "fieldId": "inline",
+          "name": "フィールドをインライン表示にする",
+          "kind": "boolean",
+          "description": "インライン表示にするとフィールドが表示時の改行がなくなります。"
+        }
+      ],
+      "position": [["5QWZkguiML", "f7IetGfCZt", "16FjsoklEL"]],
+      "updatedAt": "2022-04-25T03:23:59.836Z",
+      "viewerGroup": "2Si"
+    },
+    {
+      "createdAt": "2022-04-25T03:25:27.087Z",
+      "fieldId": "embedFooter",
+      "name": "埋め込みフッター",
+      "fields": [
+        {
+          "idValue": "J02eFcG40y",
+          "fieldId": "text",
+          "name": "フッターのテキスト",
+          "kind": "text",
+          "required": true,
+          "textSizeLimitValidation": {
+            "textSize": { "min": null, "max": 2048 }
+          }
+        }
+      ],
+      "position": [["J02eFcG40y"]],
+      "updatedAt": "2022-04-25T03:25:27.087Z",
+      "viewerGroup": "2Si"
+    },
+    {
+      "createdAt": "2022-04-26T03:00:16.088Z",
+      "fieldId": "linkButton",
+      "name": "リンクボタン",
+      "fields": [
+        {
+          "idValue": "caqngF4YfC",
+          "fieldId": "type",
+          "name": "コンポーネントの種類",
+          "kind": "number",
+          "description": "「2」（Button）のみ入力できます。",
+          "required": true,
+          "numberSizeLimitValidation": { "numberSize": { "min": 2, "max": 2 } }
+        },
+        {
+          "idValue": "4oDFq1_-HT",
+          "fieldId": "style",
+          "name": "ボタンのスタイル",
+          "kind": "number",
+          "description": "「5」（Link）のみ選択できます。",
+          "required": true,
+          "numberSizeLimitValidation": { "numberSize": { "min": 5, "max": 5 } }
+        },
+        {
+          "idValue": "IB3UKsDReA",
+          "fieldId": "label",
+          "name": "ボタンのテキスト",
+          "kind": "text",
+          "textSizeLimitValidation": { "textSize": { "min": null, "max": 80 } }
+        },
+        {
+          "idValue": "j1UvrDbQ4C",
+          "fieldId": "url",
+          "name": "ボタンのURL",
+          "kind": "text",
+          "required": true
+        },
+        {
+          "idValue": "0mVpV7MuoF",
+          "fieldId": "disabled",
+          "name": "ボタンを無効にする",
+          "kind": "boolean"
+        }
+      ],
+      "position": [
+        ["caqngF4YfC", "4oDFq1_-HT"],
+        ["IB3UKsDReA", "j1UvrDbQ4C", "0mVpV7MuoF"]
+      ],
+      "updatedAt": "2022-04-26T03:00:16.088Z",
+      "viewerGroup": "2Si"
+    }
+  ]
+}

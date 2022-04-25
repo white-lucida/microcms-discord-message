@@ -2,4 +2,4 @@ name: 'New Message'
 description: 'Create new message'
 runs:
   using: 'node16'
-  main: 'index.js'
+  main: 'dist/index.js'

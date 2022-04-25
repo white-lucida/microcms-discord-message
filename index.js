@@ -8,8 +8,8 @@ const DISCORD_API_BASE_PATH = "https://discord.com/api/v9";
  */
 const getProps = () => {
   const payload = github.context.payload.client_payload;
-  if (!payload.id) throw new TypeError("payload id should be not empty");
-  if (!payload.type) throw new TypeError("payload type should be not empty");
+  if (!payload.id) throw new TypeError("payload id should not be empty");
+  if (!payload.type) throw new TypeError("payload type should not be empty");
   return {
     id: payload.id, 
     type: payload.type,
@@ -29,15 +29,17 @@ const getContent = async ({ contentID, microCMSAPIKey, microCMSServiceID }) => {
 }
 
 /**
- * @returns {{microCMSAPIKey: string, microCMSServiceID: string}}
+ * @returns {{microCMSAPIKey: string, microCMSServiceID: string, discordToken: string}}
  */
 const getEnv = () => {
   const microCMSAPIKey = process.env.MICROCMS_API_KEY;
   const microCMSServiceID = process.env.MICROCMS_SERVICE_ID;
-  if (!microCMSAPIKey) throw new TypeError("env value MICROCMS_API_KEY should be not empty");
-  if (!microCMSServiceID) throw new TypeError("env value MICROCMS_API_KEY should be not empty");
+  const discordToken = process.env.DISCORD_TOKEN;
+  if (!microCMSAPIKey) throw new TypeError("env value MICROCMS_API_KEY should not be empty");
+  if (!microCMSServiceID) throw new TypeError("env value MICROCMS_API_KEY should not be empty");
+  if (!discordToken) throw new TypeError("env value DISCORD_TOKEN should not be empty");
   return {
-    microCMSAPIKey, microCMSServiceID
+    microCMSAPIKey, microCMSServiceID, discordToken
   }
 }
 
@@ -50,12 +52,17 @@ const getChannelIDFromURL = (channelURL) => {
 
 const createMessage = async (content) => {
   const channelID = getChannelIDFromURL(content.channelURL);
+  const { discordToken } = getEnv();
+  const header = {
+    Authorization: `Bot: ${discordToken}`
+  };
   
   await fetch(`${DISCORD_API_BASE_PATH}/channels/${channelID}/messages`, {
     method: "POST",
     body: {
       ...content.message
-    }
+    },
+    headers: header
   });
 }
 

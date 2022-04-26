@@ -10977,7 +10977,7 @@ const editMessage = async (content) => {
     Authorization: `Bot ${discordToken}`,
   };
 
-  const res = await axios.post(
+  const res = await axios.patch(
     `${DISCORD_API_BASE_PATH}/channels/${channelID}/messages/${content.message_id}`,
     content.message,
     { headers }

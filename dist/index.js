@@ -10959,7 +10959,7 @@ const createMessage = async (content) => {
 
   const res = await axios.post(
     `${DISCORD_API_BASE_PATH}/channels/${channelID}/messages`,
-    content,
+    content.message,
     { headers }
   );
 
@@ -10976,7 +10976,7 @@ const editMessage = async (content) => {
 
   const res = await axios.post(
     `${DISCORD_API_BASE_PATH}/channels/${channelID}/messages/${content.message_id}`,
-    content,
+    content.message,
     { headers }
   );
 

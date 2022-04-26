@@ -1,9 +1,10 @@
 on:
   repository_dispatch:
-    type: [new]
+    type: [discord]
 env:
   MICROCMS_API_KEY: ${{secrets.MICROCMS_API_KEY}}
   MICROCMS_SERVICE_ID: ${{secrets.MICROCMS_SERVICE_ID}}
+  MICROCMS_API_NAME: ${{secrets.MICROCMS_API_NAME}}
   DISCORD_TOKEN: ${{secrets.DISCORD_TOKEN}}
 jobs:
   new-message:

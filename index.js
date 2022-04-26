@@ -70,7 +70,10 @@ const createMessage = async (content) => {
     { headers }
   );
 
-  if (!res.status.toString().startsWith("2")) throw new Error(`Discord create message API returned error response - ${res.status}`);
+  if (!res.status.toString().startsWith("2"))
+    throw new Error(
+      `Discord create message API returned error response - ${res.status}`
+    );
   return res.data;
 };
 
@@ -87,21 +90,35 @@ const editMessage = async (content) => {
     { headers }
   );
 
-  if (!res.status.toString().startsWith("2")) throw new Error(`Discord create message API returned error response - ${res.status}`);
+  if (!res.status.toString().startsWith("2"))
+    throw new Error(
+      `Discord create message API returned error response - ${res.status}`
+    );
   return res.data;
-}
+};
 
-const setMessageID = async ({ message, content, microCMSAPIKey, microCMSServiceID, contentID }) => {
+const setMessageID = async ({
+  message,
+  content,
+  microCMSAPIKey,
+  microCMSServiceID,
+  contentID,
+}) => {
   const headers = {
     "X-MICROCMS-API-KEY": microCMSAPIKey,
   };
   const res = await axios.patch(
     `https://${microCMSServiceID}.microcms.io/api/v1/message/${contentID}`,
-    { ...content.message, message_id: message.id },
+    {
+      message: content.message,
+      message_id: message.id,
+      channel_url: content.channel_url,
+    },
     { headers }
   );
-  if (res.status !== 200) throw new Error("Editing of microcms content has failed");
-}
+  if (res.status !== 200)
+    throw new Error("Editing of microcms content has failed");
+};
 
 const main = async () => {
   const { microCMSAPIKey, microCMSServiceID } = getEnv();
@@ -115,11 +132,20 @@ const main = async () => {
 
   if (type === "new") {
     const message = await createMessage(content);
-    await setMessageID({ content, microCMSAPIKey, microCMSServiceID, contentID: id, message });
+    await setMessageID({
+      content,
+      microCMSAPIKey,
+      microCMSServiceID,
+      contentID: id,
+      message,
+    });
   }
 
   if (type === "edit") {
-    if (!content.message_id) throw new Error("message_id should not be empty when you want to edit the message");
+    if (!content.message_id)
+      throw new Error(
+        "message_id should not be empty when you want to edit the message"
+      );
     await editMessage(content);
   }
 };

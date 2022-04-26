@@ -10990,7 +10990,7 @@ const setMessageID = async ({ message, content, microCMSAPIKey, microCMSServiceI
   };
   const res = await axios.patch(
     `https://${microCMSServiceID}.microcms.io/api/v1/message/${contentID}`,
-    { ...content, message_id: message.id },
+    { ...content.message, message_id: message.id },
     { headers }
   );
   if (res.status !== 200) throw new Error("Editing of microcms content has failed");
